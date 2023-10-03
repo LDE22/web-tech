@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
+<body >
+    <div class="flex_page">
+    <header class="header_wrap">
+        <section class="header">
         <div><img src="img/logo.png" width="100" height="100"></div>
         <nav>
-            <ul>
+            <ul class="menu-nav">
                 <li><a href="Index.html">О себе</a></li>
                 <li><a href="Index.html#comps">Что я умею</a></li>
                 <li><a href="Rezume.html">Резюме</a></li>
@@ -17,16 +23,19 @@
                 <li><a href="Contacts.html">Контакты</a></li>
             </ul>
         </nav>
+        </section>
     </header>
     <main>
-        <section>
+        <section class="wrapper">
             <h1>Канеки Клюшкин</h1>
             <p>Я дед инсайд, мне 9 лет, я хочу в Психокидс</p>
             <img src="img/me.jpg" width="120" height="100">
         </section>
+        <br>
         <section>
             <a name="comps"></a>
             <h1>Что я умею</h1>
+            <div class="pictures">
             <div>
                 <img src="img/1.png" width="120" height="100">
                 <h6>1</h6>
@@ -47,12 +56,14 @@
                 <img src="img/5.png" width="120" height="100">
                 <h6>5</h6>
             </div>
+        </div>
         </section>
+        <br>
         <section>
             <h1>Сильные качества</h1>
             <ul>
             <li>энергичность</li>
-            <li>самостоятельност</li>
+            <li>самостоятельность</li>
             <li>умение принимать решения</li>
             <li>стрессоустойчивость</li>
             <li>коммуникабельность</li>
@@ -70,17 +81,21 @@
 
             </ol>
         </section>
+        <br>
         <section>
             <h2>Заголовок 4</h2>
             <p>Возьмите на работу</p>
             <p style="text-align: center"><button>Взять на работу</button>
         </section>
     </main>
-    <footer>
+    <br>
+    <footer class="footer">
         <div>
             <p>Сайт сделан мной</p>
             <img src="img/logo.png" width="60" height="60">
         </div>
     </footer>
+    </div>
+    </body>
 </body>
 </html>
