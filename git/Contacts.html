@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/Style.css">
+    <script src="JS/ScriptForm.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,11 +23,11 @@
     <main>
         <br>
         <form action="#" method="get" id="form">
-            <label class="align-center">Ваше имя <input type="text" placeholder="Введите ФИО"></label><br>
-            <label class="align-center">Адрес почты <input type="email" placeholder="Введите адрес почты"></label><br>
-            <label class="align-center">Номер телефона <input type="t" placeholder="Введите номер телефона"></label><br>
-            <label class="align-center">Дата встречи <input type="date"></label><br>
-            <label class="align-center">Введите URL-адрес<input type="url" placeholder="URL-адрес"></label><br>
+            <div><label class="align-center">Ваше имя <input type="text" placeholder="Введите ФИО"></label><br></div>
+            <div id="emailFld"><label class="align-center">Адрес почты <input type="email" placeholder="Введите адрес почты"></label><br></div>
+            <div id="phoneFld"><label class="align-center">Номер телефона <input type="tel" placeholder="Введите номер телефона"></label><br></div>
+            <div id="dateFld"><label class="align-center">Дата встречи <input type="date"></label><br></div>
+            <div id="urlFld"><label class="align-center">Введите URL-адрес<input type="url" placeholder="URL-адрес"></label><br></div>
             <br>
             <h2>Добавить способ ответа:</h2>
             <div>
