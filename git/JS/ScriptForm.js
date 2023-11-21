@@ -37,3 +37,23 @@ for(let i=0;i<Radiobtn.length;i++){
         }
     });
 }
+
+from.addEventListener('submit',function(event){
+event.preventDefault();
+const nameValid=Validname();
+const textValid=Validtext();
+function Validemail(){
+if(nameValid && textValid && (emailValid||phoneValid||dateValid)){
+	if(!Radiobtn[2].checked){return false}
+	const email=document.getElementById("").value.trim();
+	const emailRegex=/^[^\S@]+@[^\S@]+\.[^\S@]+$/;
+	if(email===''){alert(''); return false}
+	else if(!emailRegex.test(email)){return false}
+}
+//
+}	
+});
+document.getElementById("textArea").oninput=function text(){
+    localStorage.setItem('savetext',document.getElementById("textArea").value);
+}
+.value=localStorage.getItem('savetext');
