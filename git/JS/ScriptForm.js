@@ -57,3 +57,26 @@ document.getElementById("textArea").oninput=function text(){
     localStorage.setItem('savetext',document.getElementById("textArea").value);
 }
 .value=localStorage.getItem('savetext');
+
+const form=document.querySelector('form');
+const ul=document.querySelector('ul');
+const button=document.getElementById('button');
+const input=document.getElementById('Item');
+let itemArray=localStorage.getItem('items')?JSON.parse(localStorage.getItem('items')):[];
+localStorage.setItem('items',JSON.stringify(itemArray));
+const data=JSON.parse(localStorage.getItem('Item'));
+const liMaker=(text=>{
+const li=document.createElement('li');
+li.textContent=text;
+ul.appendChild(li);});
+const buttonDelete=document.createElement('button');
+buttonDelete.textContent="Delete";
+buttonDelete.addEventListener('Click',function(){ul.removeChild('li');});
+form.addEventListener('submit', function(event){event.preventDefault();
+itemArray=itemArray.filter(item=>item!==text);
+localStorage.setItem('items',JSON.stringify(itemArray));
+itemArray.push(input.value);
+localStorage.setItem('items',JSON.stringify(itemArray));
+liMaker(input.value);});
+data.forEach(item=>{
+liMaker(item)});

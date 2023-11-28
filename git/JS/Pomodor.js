@@ -1,0 +1,13 @@
+const btnstart=document.getElementById("btnstart");
+const btnpause=document.getElementById("btnpause");
+const btnreset=document.getElementById("btnreset");
+const btnfocus=document.getElementById("focus");
+const btnshortbreak=document.getElementById("shortbreak");
+const btnlongbreak=document.getElementById("longbreak");
+const time=document.getElementById("time");
+let buttons = document.querySelectorAll('.btn');
+let set;
+let active='focus';
+let minCount = 24;
+time.TextContent = `${minCount+1}:00`;
+const appendZero = (value)=>{value=value<10?`0${value}`:value; return value;};
