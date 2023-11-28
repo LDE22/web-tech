@@ -33,5 +33,6 @@ btnpause.addEventListener('click',()=>{
     btnstart.classList.add('show');
     btnreset.classList.add('show');
     paused=true;
+    clearInterval(set)
     set=setInterval(()=>{time.textContent=`${appendZero(minCount)}:${appendZero(count)}`;},0);
 });
