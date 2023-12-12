@@ -1,3 +1,27 @@
+// Переключатель темы
+const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Загрузка сохраненной темы при загрузке страницы
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+
+            // Установка состояния чекбокса в зависимости от сохраненной темы
+            themeToggle.checked = savedTheme === 'dark-theme';
+        }
+
+        themeToggle.addEventListener('change', function() {
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme')
+        
+            // Сохранение текущей темы в локальное хранилище
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+            localStorage.setItem('theme', currentTheme);
+        });
+//Контакты
+const Submit = document.getElementById("submit");
+const Reset = document.getElementById("reset");
 const emailField=document.getElementById("emailFld")
 emailField.classList.add('hidden');
 const phoneField=document.getElementById("phoneFld")
@@ -37,46 +61,56 @@ for(let i=0;i<Radiobtn.length;i++){
         }
     });
 }
-
-from.addEventListener('submit',function(event){
-event.preventDefault();
-const nameValid=Validname();
-const textValid=Validtext();
-function Validemail(){
-if(nameValid && textValid && (emailValid||phoneValid||dateValid)){
-	if(!Radiobtn[2].checked){return false}
-	const email=document.getElementById("").value.trim();
-	const emailRegex=/^[^\S@]+@[^\S@]+\.[^\S@]+$/;
-	if(email===''){alert(''); return false}
-	else if(!emailRegex.test(email)){return false}
-}
-//
-}	
+Reset.addEventListener('click',function(event){
+    location.reload();
 });
-document.getElementById("textArea").oninput=function text(){
-    localStorage.setItem('savetext',document.getElementById("textArea").value);
-}
-.value=localStorage.getItem('savetext');
+Submit.addEventListener('click',function(event){
+function Validemail(){
+	if(!Radiobtn[3].checked){return false;}
 
-const form=document.querySelector('form');
-const ul=document.querySelector('ul');
-const button=document.getElementById('button');
-const input=document.getElementById('Item');
-let itemArray=localStorage.getItem('items')?JSON.parse(localStorage.getItem('items')):[];
-localStorage.setItem('items',JSON.stringify(itemArray));
-const data=JSON.parse(localStorage.getItem('Item'));
-const liMaker=(text=>{
-const li=document.createElement('li');
-li.textContent=text;
-ul.appendChild(li);});
-const buttonDelete=document.createElement('button');
-buttonDelete.textContent="Delete";
-buttonDelete.addEventListener('Click',function(){ul.removeChild('li');});
-form.addEventListener('submit', function(event){event.preventDefault();
-itemArray=itemArray.filter(item=>item!==text);
-localStorage.setItem('items',JSON.stringify(itemArray));
-itemArray.push(input.value);
-localStorage.setItem('items',JSON.stringify(itemArray));
-liMaker(input.value);});
-data.forEach(item=>{
-liMaker(item)});
+	const email=document.getElementById("mail").value.trim();
+	const emailRegex=/^[^\S@]+@[^\S@]+\.[^\S@]+$/;
+
+	if(email===''){alert('Пожалуйста, введите адрес email'); return false;}
+
+	else if(!emailRegex.test(email)){alert('Пожалуйста, введите корректный адрес email'); return false;}
+
+    return true;
+}
+function Validname(){
+    const name=document.getElementById("name").value.trim();
+    if(name===''){
+        alert('Пожалуйста, введите имя'); 
+        return false
+    }
+    return true;
+}
+function Validtext(){
+    const text=document.getElementById("text").value.trim();
+    if(text===''){
+        alert('Пожалуйста, введите текст'); 
+        return false}
+    return true;
+}
+function Validphone(){
+    if(!Radiobtn[1].checked){return false}
+    const phone=document.getElementById("phone").value.trim();
+    const phoneRegex=/^\d{10}$/;
+    if(phone===''){alert('Пожалуйста, введите номер телефона'); return false}
+    else if(!phoneRegex.test(phone)){
+        alert('Пожалуйста, введите корректный номер телефона'); 
+        return false}
+    return true;
+}
+function Validdate(){
+        if(!Radiobtn[0].checked){return false}
+        const date=document.getElementById("dat").value;
+        const dateRegex= /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/;
+        if(date===''){alert('Пожалуйста, введите дату'); return false}
+        else if(!dateRegex.test(date)){
+            alert('Пожалуйста, введите корректную дату'); 
+            return false}
+        return true;
+    }
+if(Validname() && Validtext() && (Validemail() || Validphone()|| Validdate())){location.reload();}
+});

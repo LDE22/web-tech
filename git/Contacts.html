@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div><img src="img/logo.png" width="100" height="100"></div>
+        <div><img src="img/logog.png" width="100" height="100"></div>
         <nav>
             <ul>
                 <li><a href="Index.html">О себе</a></li>
@@ -17,17 +17,21 @@
                 <li><a href="Rezume.html">Резюме</a></li>
                 <li><a href="Interests.html">Мои интересы</a></li>
                 <li><a href="Contacts.html">Контакты</a></li>
+                <label>
+                    <input type="checkbox" id="themeToggle">
+                    Темная тема
+                </label>
             </ul>
         </nav>
     </header>
     <main>
         <br>
         <form action="#" method="get" id="form">
-            <div><label class="align-center">Ваше имя <input type="text" placeholder="Введите ФИО"></label><br></div>
-            <div id="emailFld"><label class="align-center">Адрес почты <input type="email" placeholder="Введите адрес почты"></label><br></div>
-            <div id="phoneFld"><label class="align-center">Номер телефона <input type="tel" placeholder="Введите номер телефона"></label><br></div>
-            <div id="dateFld"><label class="align-center">Дата встречи <input type="date"></label><br></div>
-            <div id="urlFld"><label class="align-center">Введите URL-адрес<input type="url" placeholder="URL-адрес"></label><br></div>
+            <div><label class="align-center">Ваше имя <input type="text" placeholder="Введите ФИО" id="name"></label><br></div>
+            <div id="emailFld"><label class="align-center">Адрес почты <input type="email" placeholder="Введите адрес почты" id="mail"></label><br></div>
+            <div id="phoneFld"><label class="align-center">Номер телефона <input type="tel" placeholder="Введите номер телефона" id="phone"></label><br></div>
+            <div id="dateFld"><label class="align-center">Дата встречи <input type="date" id="dat"></label><br></div>
+            <div id="urlFld"><label class="align-center">Введите URL-адрес<input type="url" placeholder="URL-адрес" id="url"></label><br></div>
             <br>
             <h2>Добавить способ ответа:</h2>
             <div>
@@ -58,26 +62,15 @@
             <div class="form-div">
                 <div>Ваше сообщение</div>
                 <div>
-                    <textarea cols="40" rows="10" placeholder="Введите вопрос или предложение"></textarea>
+                    <textarea cols="40" rows="10" placeholder="Введите вопрос или предложение" id="text"></textarea>
                 </div>
             </div>
             <br>
             <div class="align-center">
-                <input type="submit" value="Отправить" class="input-text">
-                <input type="reset" value="Очистить форму" class="input-text">
+                <button id="submit">Отправить</button>
+                <button id="reset">Очистить форму</button>
             </div>
         </form>
-        <textarea id="textArea"></textarea>
-        <button onclick=""></button>
-		<div>
-<form>
-<input typeof="text" id="item">
-<button type="submit">Подтвердить</button>
-</form>
-<h1>Задачки</h1>
-<ul></ul>
-<button>Очистить</button>
-</div>
     </main>
     <br>
     <footer>

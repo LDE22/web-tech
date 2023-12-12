@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/Style.css">
-	<script src="JS/Galary.js" defer></script>
+    <script src="JS/Galary.js" defer></script>
 </head>
 <body>
     <header>
-        <div><img src="img/logo.png" width="100" height="100"></div>
+        <div><img src="img/logog.png" width="100" height="100"></div>
         <nav>
             <ul>
                 <li><a href="Index.html">О себе</a></li>
@@ -17,38 +17,62 @@
                 <li><a href="Rezume.html">Резюме</a></li>
                 <li><a href="Interests.html">Мои интересы</a></li>
                 <li><a href="Contacts.html">Контакты</a></li>
+                <label>
+                    <input type="checkbox" id="themeToggle">
+                    Темная тема
+                </label>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Интересы</h1>
-			<div>
-                <img src="img/pc.jpg" width="300" height="200">
-                <h6>Plaing computer games</h6>
-            </div>
-            <div>
-                <img src="img/guitar.jpg" width="300" height="200">
-                <h6>Playing guitar</h6>
-            </div>
-            <div>
-                <img src="img/prog.png" width="300" height="200">
-                <h6>Programming</h6>
-            </div>
-		<section>
-			<span>
-            <div class="container">
-			<div class="slider">
-			<div class="sliderliner">
-			<img src="img/pc.jpg" class="mini" alt="картинкт1">
-			<img src="img/guitar.jpg" class="mini" alt="картинкт2">
-			<img src="img/prog.png" class="mini" alt="картинкт3">
-			</div>
-			</div>
-			<button class="sliderprev">Назад</button>
-			<button class="slidernext">Вперед</button>
-			</div>
+        <section>
+            <h1>Что мне нравится</h1>
+            <span>
+                <div class="slider-container">
+                    <div class="sliderline">
+                        <img src="img/pc.jpg" class="slider-img" alt="картинкт1">
+                        <img src="img/guitar.jpg" class="slider-img" alt="картинкт2">
+                        <img src="img/prog.png" class="slider-img" alt="картинкт3">
+                    </div>
+                    <div class="slider-controls">
+                        <button class="sliderprev">Назад</button>
+                        <button class="slidernext">Вперед</button>
+                    </div>
+                </div>
             </span>
-		</section>
+        </section>
+
+        <section>
+            <h1>Новая задача</h1>
+            <div>
+                <form id="kform">
+                    <input type="text" id="Item" />
+                    <button type="submit" id="button">Подтвердить</button>
+                </form>
+                <h1>Задачки</h1>
+                <ul id="ul"></ul>
+                <button id="clearButton">Очистить</button>
+            </div>
+        </section>
+
+        <section>
+            <h1>Таймер для работы</h1>
+            <div class="container">
+                <div class="section-container">
+                    <button id="focus" class="btn btntimer btn-focus">Работа</button>
+                    <button id="shortbreak" class="btn btn-shortbreak">Отдых</button>
+                    <button id="longbreak" class="btn btn-longbreak">Длинный отдых</button>
+                </div>
+                <div class="time-btncontainer">
+                    <span id="time">таймер</span>
+                    <div class="btncontainer">
+                        <button id="btn-start" class="show">Начать</button>
+                        <button id="btn-pause" class="hidden">Пауза</button>
+                        <button id="btn-reset" class="hidden">Сброс</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <br>
     <footer>
