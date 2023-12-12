@@ -5,3 +5,8 @@ document.querySelector('.slidernext').addEventListener('click',function(){
 	if(offset>768){offset=0;}
 	sliderline.style.left=offset+'px';
 });
+document.querySelector('.sliderprev').addEventListener('click',function(){
+	offset=offset-256;
+	if(offset<0){offset=768;}
+	sliderline.style.left=offset+'px';
+});
